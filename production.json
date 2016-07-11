@@ -1,0 +1,36 @@
+{
+  "apps": [{
+    "name": "notes",
+    "script": "server/server.js",
+    "node_args": [
+      "--harmony"
+    ],
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "exec_interpreter": "node",
+    "instances": "2",
+    "max_memory_restart": "300M",
+    "ignoreWatch": [
+      "[\\/\\\\]\\./",
+      "node_modules"
+    ],
+    "watch": false,
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "exec_mode": "cluster_mode"
+  }],
+  "deploy": {
+    "production": {
+      "user": "wwx",
+      "host": "120.26.228.148",
+      "ref": "origin/master",
+      "repo":"git@github.com:strong-samples/notes.git",
+      "path": "/home/wwx/sample-notes",
+      "pre-deploy-local": "echo 'This is a local executed command'",
+      "post-deploy": "cnpm install;",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
