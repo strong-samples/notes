@@ -15,7 +15,8 @@
     ],
     "watch": false,
     "env": {
-      "NODE_ENV": "production"
+      "NODE_ENV": "production",
+      "PORT": 50001,
     },
     "exec_mode": "cluster_mode"
   }],
@@ -23,11 +24,12 @@
     "production": {
       "user": "wwx",
       "host": "120.26.228.148",
+      "port": "55722",
       "ref": "origin/master",
-      "repo":"git@github.com:strong-samples/notes.git",
+      "repo":"https://github.com/strong-samples/notes.git",
       "path": "/home/wwx/sample-notes",
       "pre-deploy-local": "echo 'This is a local executed command'",
-      "post-deploy": "cnpm install;",
+      "post-deploy": "npm install && pm2 startOrGracefulReload production.json --env production",
       "env": {
         "NODE_ENV": "production"
       }
