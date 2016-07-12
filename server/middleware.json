@@ -1,6 +1,6 @@
 {
   "initial:before": {
-    "loopback#favicon": {}
+    "loopbacknext#favicon": {}
   },
   "initial": {
     "compression": {},
@@ -37,14 +37,14 @@
   "parse": {
   },
   "routes": {
-    "loopback#rest": {
+    "loopbacknext#rest": {
       "paths": ["${restApiRoot}"]
     }
   },
   "files": {
   },
   "final": {
-    "loopback#urlNotFound": {}
+    "loopbacknext#urlNotFound": {}
   },
   "final:after": {
     "strong-error-handler": {}

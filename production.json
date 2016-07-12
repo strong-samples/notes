@@ -16,7 +16,7 @@
     "watch": false,
     "env": {
       "NODE_ENV": "production",
-      "PORT": 50001,
+      "PORT": 50001
     },
     "exec_mode": "cluster_mode"
   }],
